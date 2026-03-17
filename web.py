@@ -4,11 +4,10 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-	link = "歡迎進入許允蓁的首頁"
-	link += "<a href='/mis>"
-	link += "<a href='/about>課程</a><br>"
-	link += "<a href='/about>今天日期</a><br>"
-	link += "<a href='/about>關於允蓁</a><br>"
+	link = "<h1>歡迎進入許允蓁的首頁</h1>"
+	link += "<a href='/mis'>課程</a><br>"
+	link += "<a href='/today'>今天日期</a><br>"
+	link += "<a href='/about'>關於允蓁</a><br>"
 	return link
 
 @app.route("/mis")
@@ -24,7 +23,7 @@ def today():
     now = year + "年" + month + "月" + day + "日"
     return render_template("today.html", datetime = now)
 
-@app.route("/mis")
+@app.route("/about")
 def about():
     return render_template("about.html")
 
